@@ -8,9 +8,9 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@catppuccin/tailwindcss')({
-      prefix: 'ctp',
-      defaultFlavour: 'latte'
+    require("@catppuccin/tailwindcss")({
+      prefix: "ctp",
+      defaultFlavour: "latte",
     }),
   ],
-}
+};
