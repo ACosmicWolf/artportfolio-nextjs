@@ -1,11 +1,16 @@
 import React from "react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Nav() {
   const [navbar, setNavbar] = useState(false);
   return (
     <div className="ctp-mocha">
-      <header className="bg-gradient-to-r from-ctp-sky to-ctp-lavender relative">
+      <motion.header
+        animate={{ scale: 1 }}
+        initial={{ scale: 0 }}
+        className="bg-gradient-to-r from-ctp-sky to-ctp-lavender relative"
+      >
         <nav className="flex justify-between p-4 shadow-lg">
           <div className="ml-4 text-lg">
             <a href="#">
@@ -62,11 +67,13 @@ export default function Nav() {
             </button>
           </div>
         </nav>
-      </header>
-      <div
+      </motion.header>
+      <motion.div
         className={`border-b-2 border-ctp-crust/10 ${
-          navbar ? "block" : "hidden"
+          navbar ? "scale-100" : "scale-0"
         }`}
+        animate={{ scale: navbar ? 1 : 0 }}
+        initial={{ scale: 0 }}
       >
         <ul className="p-4">
           <li className="p-4">
@@ -82,7 +89,7 @@ export default function Nav() {
             <a href="#">Contact</a>
           </li>
         </ul>
-      </div>
+      </motion.div>
     </div>
   );
 }
