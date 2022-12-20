@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Nav() {
   const [navbar, setNavbar] = useState(false);
@@ -20,15 +21,15 @@ export default function Nav() {
             </div>
             {/* Links */}
             <div className="text-sm p-1 text-ctp-surface0 hidden sm:block">
-              <a className="m-1" href="#">
+              <Link className="m-1" href="/">
                 Home
-              </a>
+              </Link>
               <a className="m-1" href="#">
                 About
               </a>
-              <a className="m-1" href="#">
-                Portfolio
-              </a>
+              <Link className="m-1" href="/gallery">
+                Gallery
+              </Link>
               <a className="m-1" href="#">
                 Contact
               </a>
