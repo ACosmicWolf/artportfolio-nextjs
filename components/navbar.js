@@ -84,9 +84,9 @@ export default function Nav() {
           <a href="#">
             <li className="p-4">About</li>
           </a>
-          <a href="#">
-            <li className="p-4">Gallery</li>
-          </a>
+          <Link className="m-1" href="/gallery">
+            Gallery
+          </Link>
           <a href="#">
             <li className="p-4">Contact</li>
           </a>
