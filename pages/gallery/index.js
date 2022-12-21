@@ -4,6 +4,7 @@ import firebaseApp from "../../firebase/clientApp";
 
 import { getDatabase, ref, child, get } from "firebase/database";
 import { async } from '@firebase/util';
+import Image from 'next/image';
 
 const Gallery = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,18 +32,24 @@ const Gallery = () => {
     return <div>Fetching Data...</div>
   }
 
-  const data = snapshot.current;
+  const data = Object.values(snapshot.current);
 
   return (
     <div>
-      <p>Hello</p>
+      <p>Artworks</p>
       {
-        data.map((item) => {
+        data.map((item, index) => {
           return (
-            <li key={item.id}>
+            <li key={index}>
               <p>Name: {item.name}</p>
               <p>description: {item.description}</p>
-              <p>url: {item.url}</p>
+              <div className='w-80 h-80 relative'>
+                <Image
+                  src={item.url}
+                  fill={true}
+                  alt={item.name}
+                />
+              </div>
             </li>
           )
         })
