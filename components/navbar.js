@@ -72,9 +72,8 @@ export default function Nav() {
         </motion.div>
       </div>
       <motion.div
-        className={`border-b-2 border-ctp-crust/10 w-full z-50 bg-ctp-mantle absolute ${
-          navbar ? "scale-100" : "scale-0"
-        }`}
+        className={`border-b-2 border-ctp-crust/10 w-full z-50 bg-ctp-mantle absolute ${navbar ? "scale-100" : "scale-0"
+          }`}
         animate={{ scale: navbar ? 1 : 0 }}
         initial={{ scale: 0 }}
       >
@@ -86,7 +85,7 @@ export default function Nav() {
             <li className="p-4">About</li>
           </a>
           <a href="#">
-            <li className="p-4">Portfolio</li>
+            <li className="p-4">Gallery</li>
           </a>
           <a href="#">
             <li className="p-4">Contact</li>
