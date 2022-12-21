@@ -19,7 +19,7 @@ export const authOptions = {
           return null;
         }
 
-        return { id: "1", name: "Admin", email: "admin@admin.com" };
+        return { id: "1", name: "Admin", email: process.env.ADMIN_EMAIL };
       },
     }),
   ],
